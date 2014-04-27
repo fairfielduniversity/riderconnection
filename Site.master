@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="top" runat="server">
+  <title>Riders Connection</title>
+<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+
+
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+   <img src="images/demo/mainlogo.jpg" alt="" />
+      <h1><a href="Index.aspx">Riders Connection</a></h1>
+      <p><strong>Your ultimate ride finder !</strong></p>
+    </div>
+
+    <div id="newsletter">
+      <p>Login today to find your offers !</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>NewsLetter</legend>
+          <input type="text" value="Email&hellip;"  onfocus="this.value=(this.value=='Email&hellip;')? '' : this.value ;" />
+          <input type="text" value="Pass&hellip;"  onfocus="this.value=(this.value=='Pass&hellip;')? '' : this.value ;" />
+          <input type="submit" name="news_go"  value="Sign In" /> <br/>
+          
+        </fieldset>
+
+      </form>
+       <p ><a href="ForgotPassword.aspx">Forgot Your Password</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="Register.aspx">Register a new Account &raquo;</a></p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col2">
+  <div id="topbar">
+    <div id="topnav">
+      <ul>
+        <li class="active"><a href="Index.aspx">Home</a></li>
+        <li><a href="Register.aspx">Register</a></li>
+        
+        <li><a href="Howitworks.aspx">How it works  ? </a></li>
+         <li ><a href="About.aspx">About us</a></li>
+        <li><a href="OfferForm.aspx">Offer/Requester Form</a>
+          </li>
+       
+      </ul>
+    </div>
+       <br class="clear" />
+  </div>
+</div>
+    
+      
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    </form>
+    <div class="wrapper col7">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="AdminSite.master">Basana Upreti</a></p>
+    <p class="fl_right">Designed by Basana Upreti for ASP.net Final Project</p>
+    <br class="clear" />
+  </div>
+</div>
+
+</body>
+</html>
+

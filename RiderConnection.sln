@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RiderConnection", "http://localhost:28280", "{E3C18B03-AD0A-4D55-87B4-4FFAEDC89B17}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/RiderConnection"
+		Debug.AspNetCompiler.PhysicalPath = "..\RiderConnection\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\RiderConnection\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/RiderConnection"
+		Release.AspNetCompiler.PhysicalPath = "..\RiderConnection\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\RiderConnection\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\RiderConnection\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3C18B03-AD0A-4D55-87B4-4FFAEDC89B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C18B03-AD0A-4D55-87B4-4FFAEDC89B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

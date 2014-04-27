@@ -1,0 +1,12 @@
+﻿.button {
+background-color: white;
+width :90px;
+font-size:15px;
+
+border-radius:10px;
+font-weight: bold;
+background:#6aa1e4;
+border: 1px solid #808080;
+padding: .4em;
+}
+

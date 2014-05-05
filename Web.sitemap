@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Index.aspx" title="Home"  description="Home Page">
+         <siteMapNode url="~/Register.aspx" title="Registration Page"  description="Be a member" >
+              <siteMapNode url="~/Howitworks.aspx" title="How our site work?"  description="Define the flow of the process" />
+              
+              <siteMapNode url="~/OfferForm.aspx" title="Fill the form to offer ride"  description="Offerer Form" />
+              
+        </siteMapNode>
+  
+        <siteMapNode url="~/SearchResult.aspx" title="Search Offer"  description="Search Offer" >
+          <siteMapNode url="~/ForgotPassword.aspx" title="How to reset your password?"  description="Forgot my Password" />
+          
+        </siteMapNode>
+    </siteMapNode>
+</siteMap>

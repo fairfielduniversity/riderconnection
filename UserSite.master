@@ -17,8 +17,9 @@
     </div>
 
     <div id="newsletter">
-      <p>Welcome User !.&quot;user name&quot;......</p>
-       <p class="right" ><a href="Index.aspx"><strong>LOG OUT</strong></a></p>
+      <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label>!</p>
+        <img src="images/demo/profilepic.png" />
+       <p  >&nbsp&nbsp<a href="Index.aspx"><strong>LOG OUT</strong></a></p>
     </div>
     <br class="clear" />
   </div>
@@ -29,8 +30,10 @@
       <ul>
          <li class="#"><a href="MyProfile_User.aspx">My Profile</a></li>
          <li><a href="#">My Messages</a></li>
-        <li><a href="OfferForm.aspx">I am available for</a></li>
-         <li><a href="Index.aspx">Offer Search</a></li>
+         <li><a href="OfferForm.aspx">Offer/Request form</a></li>
+         <li><a href="Index.aspx">Search</a></li>
+          <li><a href="TransactionForm.aspx">Payment</a></li>
+         
       </ul>
     </div>
        <br class="clear" />
@@ -49,15 +52,32 @@
      </div>
 
 
-    </form>
     <div class="wrapper col7">
   <div id="copyright">
     <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Basana Upreti</a></p>
+      <p class="fl_right">
+          <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DataSourceID="SiteMapDataSource1" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
+              <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+              <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+              <DynamicMenuStyle BackColor="#FFFBD6" />
+              <DynamicSelectedStyle BackColor="#FFCC66" />
+              <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+              <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+              <StaticSelectedStyle BackColor="#FFCC66" />
+      </asp:Menu> 
+      <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+          <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+      </asp:SiteMapPath>
+      </p>
     <p class="fl_right">Designed by Basana Upreti for ASP.net Final Project</p>
     <br class="clear" />
+      </form>
   </div>
 </div>
 
+
+    </form>
+    
 </body>
 </html>
 

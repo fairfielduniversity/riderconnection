@@ -8,7 +8,7 @@
   <div id="intro">
     <div class="fl_left">
       <h2>How it works ?</h2>
-      <p>Offerers offer, Riders chhose and pay !</p> </br>
+      <p>Offerers offer, Riders chhose and pay !</p> <br/>
       <p class="readmore"><a href="#">Find me a ride today &raquo;</a></p>
     </div>
 

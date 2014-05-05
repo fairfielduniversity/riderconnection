@@ -13,11 +13,11 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnReset_Click(object sender, EventArgs e)
     {
-        txtFrom.Text = "";
-        txtTo.Text = "";
+       // txtFrom.Text = "";
+      //  txtTo.Text = "";
         txtFromZipCode.Text = "";
         txtToZipCode.Text = "";
-        txtDate.Text = "";
+        //txtDate.Text = "";
         txtCount.Text = "";
     }
 }

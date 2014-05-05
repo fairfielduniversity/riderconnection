@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT [User_ID], [FirstName], [MiddleName], [LastName], [Telephone], [State] FROM [User_Information1]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT [User_ID], [FirstName], [MiddleName], [LastName], [Telephone], [State] FROM [User_Information]"></asp:SqlDataSource>
     <div class="wrapper col3">
   <div id="intro">
     <div class="fl_left">
@@ -14,13 +14,12 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" PageSize="4" AutoGenerateColumns="False" DataKeyNames="User_ID" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:BoundField DataField="User_ID" HeaderText="User ID" ReadOnly="True" SortExpression="User_ID" />
-            <asp:BoundField DataField="FirstName" HeaderText="First Name" >
-            <ControlStyle ForeColor="#333300" Width="70px" />
+            <asp:BoundField DataField="User_ID" HeaderText="User_ID" ReadOnly="True" SortExpression="User_ID" InsertVisible="False" />
+            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" >
             </asp:BoundField>
-            <asp:BoundField DataField="MiddleName" HeaderText="Middle Name"  />
-            <asp:BoundField DataField="LastName" HeaderText="Last Name"  />
-            <asp:BoundField DataField="Telephone" HeaderText="Telephone" />
+            <asp:BoundField DataField="MiddleName" HeaderText="MiddleName" SortExpression="MiddleName"  />
+            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName"  />
+            <asp:BoundField DataField="Telephone" HeaderText="Telephone" SortExpression="Telephone" />
             <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
         </Columns>
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

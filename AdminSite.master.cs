@@ -11,4 +11,26 @@ public partial class AdminSite : System.Web.UI.MasterPage
     {
 
     }
+
+    //this gets exposed for later on
+    public string PageH1Text
+    {
+        set { lblLoggedInUser.Text= value;}
+    }
+
+  /*  protected void SignOut_Click(object sender, EventArgs e)
+    {
+        //First we need to remove the session variable 
+        if (Session["FirstName"] != null)
+        {
+            Session.Remove("FirstName");
+            Response.Redirect("~/index.aspx");
+        }
+
+        else
+        {
+            Response.Redirect("~/index.aspx");
+        }
+    }
+   * */
 }

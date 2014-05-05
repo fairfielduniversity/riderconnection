@@ -11,4 +11,9 @@ public partial class UserSite : System.Web.UI.MasterPage
     {
 
     }
+
+    public string PageH1Text
+    {
+        set { lblLoggedInUser.Text = value; }
+    }
 }

@@ -17,11 +17,13 @@
     </div>
 
     <div id="newsletter">
-      <p>Welcome to Admin Page !........</p> <br /> <p style="font-weight: 700; text-align: right"><a href="Index.aspx">Sign Out</a></p>
-      <form >
+       
+     
+    
       
-
-      </form>
+          <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label> !</p> <img src="images/demo/profilepic.png" />  <p >&nbsp&nbsp<a href="Index.aspx"><strong>LOG OUT</strong></a></p>
+              &nbsp;</p>
+     
        <p ></p>
     </div>
     <br class="clear" />
@@ -33,9 +35,9 @@
       <ul>
           <li class="#"><a href="MyProfile_Admin.aspx">My Profile</a></li>
         <li class="#"><a href="Allusers_Admin.aspx">Users</a></li>
-        <li><a href="#">Messages</a></li>
+        <li><a href="#">All Messages</a></li>
         
-        <li><a href="#">Offers</a></li>
+        <li><a href="#">All Offers</a></li>
          <li ><a href="#">Locked Offers</a></li>
         
        

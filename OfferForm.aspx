@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="OfferForm.aspx.cs" Inherits="_Default" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserSite.master" AutoEventWireup="true" CodeFile="OfferForm.aspx.cs" Inherits="_Default" %>
+<%@ MasterType VirtualPath="~/UserSite.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
 </asp:Content>
@@ -7,7 +7,7 @@
     <div class="wrapper col5">
   <div id="container">
     <div id="content">
-      <h1>I am availabel</h1>
+      <h1>I am available</h1>
     
       <div id="respond">
        
@@ -32,14 +32,54 @@
                 <asp:TextBox ID="txtRate" runat="server"></asp:TextBox>
                 <label><small>My Rate</small></label>
             </p>
+           <p>
+              <asp:DropDownList ID="expiryMonth" runat="server">
+                  <asp:ListItem Value="01">Jan</asp:ListItem>
+                  <asp:ListItem Value="02">Feb</asp:ListItem>
+                  <asp:ListItem Value="03">Mar</asp:ListItem>
+                  <asp:ListItem Value="04">Apr</asp:ListItem>
+                  <asp:ListItem Value="05">May</asp:ListItem>
+                  <asp:ListItem Value="06">Jun</asp:ListItem>
+                  <asp:ListItem Value="06">Jul</asp:ListItem>
+                  <asp:ListItem Value="07">Aug</asp:ListItem>
+                  <asp:ListItem Value="09">Sep</asp:ListItem>
+                  <asp:ListItem Value="10">Oct</asp:ListItem>
+                  <asp:ListItem Value="11">Nov</asp:ListItem>
+                  <asp:ListItem Value="12">Dec</asp:ListItem>
+              </asp:DropDownList><asp:DropDownList ID="expiryYear" runat="server">
+                  <asp:ListItem>2014</asp:ListItem>
+                  <asp:ListItem>2015</asp:ListItem>
+                  <asp:ListItem>2016</asp:ListItem>
+                  <asp:ListItem>2017</asp:ListItem>
+                  <asp:ListItem>2018</asp:ListItem>
+              </asp:DropDownList>
+              
+             <label><small>&nbsp; Start Date</small></label></p>
+          
+           <p>
+              <asp:DropDownList ID="DropDownList1" runat="server">
+                  <asp:ListItem Value="01">Jan</asp:ListItem>
+                  <asp:ListItem Value="02">Feb</asp:ListItem>
+                  <asp:ListItem Value="03">Mar</asp:ListItem>
+                  <asp:ListItem Value="04">Apr</asp:ListItem>
+                  <asp:ListItem Value="05">May</asp:ListItem>
+                  <asp:ListItem Value="06">Jun</asp:ListItem>
+                  <asp:ListItem Value="06">Jul</asp:ListItem>
+                  <asp:ListItem Value="07">Aug</asp:ListItem>
+                  <asp:ListItem Value="09">Sep</asp:ListItem>
+                  <asp:ListItem Value="10">Oct</asp:ListItem>
+                  <asp:ListItem Value="11">Nov</asp:ListItem>
+                  <asp:ListItem Value="12">Dec</asp:ListItem>
+              </asp:DropDownList><asp:DropDownList ID="DropDownList2" runat="server">
+                  <asp:ListItem>2014</asp:ListItem>
+                  <asp:ListItem>2015</asp:ListItem>
+                  <asp:ListItem>2016</asp:ListItem>
+                  <asp:ListItem>2017</asp:ListItem>
+                  <asp:ListItem>2018</asp:ListItem>
+              </asp:DropDownList>
+              
+             <label><small>&nbsp; Expiration Date</small></label></p>
           <p>
-            <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
-            <label><small>start Date</small></label>
-          </p>
-          <p>
-            <asp:TextBox ID="txtExpiryDate" runat="server"></asp:TextBox>
-            <label><small>Expiry Date</small></label>
-          </p>
             <p>
             <asp:TextBox ID="txtPassengerCount" runat="server"></asp:TextBox>
             <label ><small>Passenger Count</small></label>
@@ -63,27 +103,11 @@
         
       </div>
     </div>
-      <div id="column">
-      <div class="subnav">
-        <h2>Quick Navigation</h2>
-        <ul>
-          <li><a href="#">Update My Info</a></li>
-          <li><a href="#">Privacy Settings</a>
-            <ul>
-              <li><a href="#">Change Password</a></li>
-              <li><a href="#">Change Secret Question</a></li>
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-     
-     
-    
-    </div>
+ 
+  
     <div class="clear"></div>
   </div>
 </div>
-    </label>
+    
 </asp:Content>
 

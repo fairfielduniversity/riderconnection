@@ -10,7 +10,7 @@
       <h4>Credit Card Information</h4>
         
         <p>
-            <label>Card Type:</label>
+            <label>Card Type:</label><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="Please choose your card type" ForeColor="#FF0066"></asp:RequiredFieldValidator>
             <small>
             <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
                 <asp:ListItem>MasterCard</asp:ListItem>
@@ -21,14 +21,19 @@
                 </small>
 
           
+           
+
+          
         </p>
      
           <p>
               <asp:TextBox ID="txtCardNumber" runat="server" Width="210px"></asp:TextBox>
             <label><small>&nbsp; Card Number *&nbsp;&nbsp;&nbsp;</small></label>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCardNumber" ErrorMessage="Please Enter your card number." ForeColor="#FF0066"></asp:RequiredFieldValidator>
           </p>
           <p>
               <asp:DropDownList ID="expiryMonth" runat="server">
+                  <asp:ListItem Value=""> </asp:ListItem>
                   <asp:ListItem Value="01">Jan</asp:ListItem>
                   <asp:ListItem Value="02">Feb</asp:ListItem>
                   <asp:ListItem Value="03">Mar</asp:ListItem>
@@ -42,36 +47,38 @@
                   <asp:ListItem Value="11">Nov</asp:ListItem>
                   <asp:ListItem Value="12">Dec</asp:ListItem>
               </asp:DropDownList><asp:DropDownList ID="expiryYear" runat="server">
+                  <asp:ListItem> </asp:ListItem>
                   <asp:ListItem>2014</asp:ListItem>
                   <asp:ListItem>2015</asp:ListItem>
                   <asp:ListItem>2016</asp:ListItem>
                   <asp:ListItem>2017</asp:ListItem>
                   <asp:ListItem>2018</asp:ListItem>
-              </asp:DropDownList>
+              </asp:DropDownList><asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="Choose Month" ControlToValidate="expiryMonth" ForeColor="#CC0066"></asp:RequiredFieldValidator>//<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Choose expiry  Year" ControlToValidate="expiryYear" ForeColor="#FF0066"></asp:RequiredFieldValidator>
               
              <label><small>&nbsp; Expiration Date*</small></label></p>
           <p>
            <asp:TextBox ID="txtSecuritycode" runat="server" Width="98px"></asp:TextBox>
-            <label><small>&nbsp; 3-digits Security Code</small></label> *</p>
+            <label><small>&nbsp; 3-digits Security Code</small></label> *<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSecuritycode" ErrorMessage="Please enter your 3 digit number" ForeColor="Red"></asp:RequiredFieldValidator>
+         </p>
           <br />
            <h4>Billing Address</h4> 
         <p>
-              <asp:TextBox ID="txtName" runat="server" Width="218px"></asp:TextBox>
+              <asp:TextBox ID="txtName" runat="server" Width="218px"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Required" ControlToValidate="txtName" ForeColor="#FF3300"></asp:RequiredFieldValidator>
             <label><small>&nbsp; Full Name*</small></label></p>
         <p>
-           <asp:TextBox ID="txtBillingAddress1" runat="server" Width="217px" MaxLength="10"></asp:TextBox>
+           <asp:TextBox ID="txtBillingAddress1" runat="server" Width="217px" MaxLength="10"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingAddress1" ForeColor="#FF0066"></asp:RequiredFieldValidator>
             <label><small>&nbsp; Billing Address *</small></label></p>
         <p>
-        <asp:TextBox ID="txbBillingAddress2" runat="server" Width="216px"></asp:TextBox>
+        <asp:TextBox ID="txbBillingAddress2" runat="server" Width="216px"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Required" ControlToValidate="txbBillingAddress2" ForeColor="Red"></asp:RequiredFieldValidator>
             <label><small>&nbsp; Apartment No / Floor*</small></label></p>
        
           <p>
-           <asp:TextBox ID="txtCity" runat="server" Width="216px"></asp:TextBox>
+           <asp:TextBox ID="txtCity" runat="server" Width="216px"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Required" ControlToValidate="txtCity" ForeColor="#FF0066"></asp:RequiredFieldValidator>
              <label><small>&nbsp; City*</small></label></p>
-       <p> <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
+       <p> <asp:TextBox ID="txtState" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Required" ControlToValidate="txtState" ForeColor="#FF0066"></asp:RequiredFieldValidator>
              <label><small>&nbsp; State*</small></label></p>
         <p>
-        <asp:TextBox ID="txtZip" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtZip" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Required" ControlToValidate="txtZip" ForeColor="#FF0066"></asp:RequiredFieldValidator>
              <label><small>&nbsp;Zip*</small></label></p>
        
           <p>

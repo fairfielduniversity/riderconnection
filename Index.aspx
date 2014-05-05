@@ -16,12 +16,15 @@
                 <td>
               <asp:TextBox ID="txtFromZipCode" runat="server" Width="255px"></asp:TextBox>
             
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFromZipCode" ErrorMessage="Required" ForeColor="Red"></asp:RequiredFieldValidator>
+            
                 </td>
             </tr>
             <tr>
                 <td style="width: 90px">To</td>
                 <td>
               <asp:TextBox ID="txtToZipCode" runat="server" Width="256px" Height="17px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtToZipCode" ErrorMessage="Required" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>

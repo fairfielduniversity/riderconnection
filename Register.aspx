@@ -18,6 +18,8 @@
                                            <label><small>First Name (required)</small></label>
                                           <asp:TextBox ID="txtFname" runat="server" Width="200px" ></asp:TextBox>
                                         
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFname" ErrorMessage="Please enter your first name." ForeColor="Red"></asp:RequiredFieldValidator>
+                                        
                                       </p>
                                      
                                       <p>
@@ -28,15 +30,21 @@
                                         <p>
                                             <label><small>Last Name (required)</small></label>
                                              <asp:TextBox ID="txtLname" runat="server" Width="200px" ></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtLname" ErrorMessage="Please enter your last name" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </p>
                                       <p>
                                           <label><small>E-Mail (required)</small></label>
                                          <asp:TextBox ID="txtEmail" runat="server" Width="200px" ></asp:TextBox>
                                         
+                                          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmail" ErrorMessage="please enter your email address" ForeColor="Red"></asp:RequiredFieldValidator>
+                                         
+                                        
                                       </p>
                                       <p>
                                            <label><small>Password</small></label>
-                                           <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" ></asp:TextBox>
+                                           <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="203px" ></asp:TextBox>
+                                       
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please enter password" ForeColor="Red"></asp:RequiredFieldValidator>
                                        
                                       </p>
             
@@ -45,18 +53,23 @@
                                            <label><small>Security Question</small></label>
                                          <asp:TextBox ID="txtquestion" runat="server" Width="200px" ></asp:TextBox>
                                         
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtquestion" ErrorMessage="Please enter your  question" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        
                                       </p>
         
                                        <p>
                                             <label><small>Security Answer</small></label>
                                          <asp:TextBox ID="txtAnswer" runat="server" Width="200px" ></asp:TextBox>
                                        
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtAnswer" ErrorMessage="Please enter your security answer" ForeColor="Red"></asp:RequiredFieldValidator>
+                                       
                                       </p>
 
                                        <p>
                                             <label for="Usertype"><small>User-Type (required)</small></label>
                                           <small> <asp:CheckBoxList ID="CheckBoxList1" runat="server" RepeatDirection="Horizontal" DataSourceID="SqlDataSource2" DataTextField="User_TypeDetails" DataValueField="User_TypeID">
-                                            </asp:CheckBoxList></small> 
+                                            </asp:CheckBoxList></small> <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please choose a user type" ClientValidationFunction="CheckBoxList1_ClientValidate" ForeColor="#FF3300"></asp:CustomValidator>
+                                            
                                         </p>
                                       </div>
        

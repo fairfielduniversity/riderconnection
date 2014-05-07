@@ -1,0 +1,12 @@
+﻿body{
+    font-size: 1.1em;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    color: #373636;
+    background: #ffffff;
+}
+.content-wrapper{
+    width: 100%;
+    max-width: 1020px;
+    margin: auto;
+    padding: 10px 2px;
+}

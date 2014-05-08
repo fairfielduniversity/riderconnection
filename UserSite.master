@@ -19,7 +19,7 @@
     <div id="newsletter">
       <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label>!</p>
         <img src="images/demo/profilepic.png" />
-       <p  >&nbsp&nbsp<a href="Index.aspx"><strong>LOG OUT</strong></a></p>
+       <p  >&nbsp&nbsp<a href="/"><strong>LOG OUT</strong></a></p>
     </div>
     <br class="clear" />
   </div>
@@ -27,14 +27,14 @@
 <div class="wrapper col2">
   <div id="topbar">
     <div id="topnav">
-      <ul>
-         <li class="#"><a href="MyProfile_User.aspx">My Profile</a></li>
-         <li><a href="#">My Messages</a></li>
-         <li><a href="OfferForm.aspx">Offer/Request form</a></li>
-         <li><a href="Index.aspx">Search</a></li>
-          <li><a href="TransactionForm.aspx">Payment</a></li>
-         
-      </ul>
+        <ul>
+            <li class="#"><a href="/MyProfile_User.aspx">My Profile</a></li>
+            <li><a href="/OfferForm.aspx">Offer/Request form</a></li>
+            <li><a href="/Lookup.aspx">Search</a></li>
+            <li><a href="/myoffers.aspx">My Offers</a></li>
+            <li><a href="/myrequests.aspx">My Requests</a></li>
+            <li><a href="/TransactionForm.aspx">Payment</a></li>
+        </ul>
     </div>
        <br class="clear" />
   </div>

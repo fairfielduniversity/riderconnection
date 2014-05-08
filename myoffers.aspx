@@ -81,12 +81,12 @@
                         <asp:Label ID="User_IDLabel" runat="server" Text='<%# Eval("FIRSTNAME") + " " +  Eval("LASTNAME")%>' />
                     </td>
                     <td class="width100"">
-                        <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : "Rejected")  %>' />
+                        <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>' />
                     </td>
 
                     <td class="width200">
-                        <asp:Button ID="Accept" runat="server" CommandName="Accept" Text="Accept" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("Status").ToString() != "1") %>' />
-                        <asp:Button ID="Reject" runat="server" CommandName="Reject" Text="Reject" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("Status").ToString() != "2") %>' />
+                        <asp:Button ID="Accept" runat="server" CommandName="Accept" Text="Accept" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("maxstatus").ToString() != "3" && Eval("Status").ToString() != "1") %>' />
+                        <asp:Button ID="Reject" runat="server" CommandName="Reject" Text="Reject" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("maxstatus").ToString() != "3" && Eval("Status").ToString() != "2") %>' />
                     </td>
                 </tr>
             </table>
@@ -94,9 +94,16 @@
         <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
     </asp:DataList>
         </div>
-    <br /></br>
+    <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>"
-        SelectCommand="SELECT [OfferLock_ID], [Offer_ID], [Status], [UserID], [FIRSTNAME], [LASTNAME] FROM [Offer_Lock], [User_Information] WHERE [User_Information].User_ID = [OFFER_LOCK].UserID AND ([OFFER_ID] = @OfferId)">
+        SelectCommand="SELECT [OfferLock_ID], [Offer_ID], [Status], 
+        (SELECT max(status) maxstatus
+            FROM 
+	     [Offer_Lock], 
+	     [User_Information] 
+        WHERE 
+	        [User_Information].User_ID = [OFFER_LOCK].UserID 
+AND ([OFFER_ID] =@OfferId)) maxstatus, [UserID], [FIRSTNAME], [LASTNAME] FROM [Offer_Lock], [User_Information] WHERE [User_Information].User_ID = [OFFER_LOCK].UserID AND ([OFFER_ID] = @OfferId)">
         <SelectParameters>
             <asp:ControlParameter ControlID="ddlOfferId" Name="OfferId"
                 PropertyName="SelectedValue" Type="Int32" />

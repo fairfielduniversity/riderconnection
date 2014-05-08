@@ -66,7 +66,7 @@
                             <asp:Label ID="Offer_IDLabel" runat="server" Text='<%# Eval("Offer_ID") %>' />
                         </td>
                         <td class="col-center width100">
-                            <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : "Rejected")  %>' />
+                            <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>' />
                         </td>
                         <td class="col-center width200">
                             <asp:Button ID="Pay" runat="server" CommandName="Pay" Text="Pay" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("Status").ToString() == "1") %>' />

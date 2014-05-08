@@ -32,8 +32,7 @@
             <li><a href="/OfferForm.aspx">Offer/Request form</a></li>
             <li><a href="/Lookup.aspx">Search</a></li>
             <li><a href="/myoffers.aspx">My Offers</a></li>
-            <li><a href="/myrequests.aspx">My Requests</a></li>
-            <li><a href="/TransactionForm.aspx">Payment</a></li>
+            <li><a href="/myrequests.aspx">My Requests</a></li>            
         </ul>
     </div>
        <br class="clear" />

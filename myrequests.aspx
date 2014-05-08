@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserSite.master" AutoEventWireup="true" CodeFile="myrequests.aspx.cs" Inherits="MyRequests" %>
-
+<%@ MasterType VirtualPath="~/UserSite.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
         <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <style type="text/css">
@@ -45,7 +45,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
     <div style="min-height:300px">
-        <asp:DataList ID="DataList1" runat="server" CssClass="table-center" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333">
+        <asp:DataList ID="DataList1" runat="server" CssClass="table-center" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" OnItemCommand="DataList1_ItemCommand">
             <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

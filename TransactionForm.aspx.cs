@@ -42,6 +42,7 @@ public partial class _Default : System.Web.UI.Page
                             + "and offerlock_id <> " + offerlockId;
             cmd = new SqlCommand(reject, con);
             cmd.ExecuteNonQuery();
+            Response.Redirect("~/myrequests.aspx");
         }
 
     }

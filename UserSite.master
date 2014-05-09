@@ -5,20 +5,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="top" runat="server">
   <title>Riders Connection</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-
-
-<div class="wrapper col1">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="wrapper col1">
   <div id="header">
     <div id="logo">
-   <img src="images/demo/mainlogo.jpg" alt="" />
+   <img src="/images/demo/mainlogo.jpg" alt="" />
       <h1><a href="Index.aspx">Riders Connection</a></h1>
       <p><strong>Your ultimate ride finder !</strong></p>
     </div>
 
     <div id="newsletter">
       <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label>!</p>
-        <img src="images/demo/profilepic.png" />
+        <img src="/images/demo/profilepic.png" />
        <p  >&nbsp&nbsp<a href="/"><strong>LOG OUT</strong></a></p>
     </div>
     <br class="clear" />
@@ -30,21 +34,17 @@
         <ul>
             <li class="#"><a href="/MyProfile_User.aspx">My Profile</a></li>
             <li><a href="/OfferForm.aspx">Offer/Request form</a></li>
-            <li><a href="/Lookup.aspx">Search</a></li>
             <li><a href="/myoffers.aspx">My Offers</a></li>
-            <li><a href="/myrequests.aspx">My Requests</a></li>            
+            <li><a href="/myrequests.aspx">My Requests</a></li>
+            <li><a href="/rides/lookup.aspx">Find a ride</a></li>
+            <li><a href="/rides/Offer.aspx">Offer a ride</a></li>            
         </ul>
     </div>
        <br class="clear" />
   </div>
 </div>
-    
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
     <form id="form1" runat="server">
-    <div>
+    <div class="container">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>

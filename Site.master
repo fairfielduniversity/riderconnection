@@ -15,7 +15,7 @@
     <div class="wrapper col1">
   <div id="header">
     <div id="logo">
-   <img src="images/demo/mainlogo.jpg" alt="" />
+   <img src="/images/demo/mainlogo.jpg" alt="" />
       <h1><a href="Index.aspx">Riders Connection</a></h1>
       <p><strong>Your ultimate ride finder !</strong></p>
     </div>
@@ -29,10 +29,10 @@
     <div id="topnav">
       <ul>
         <li class="active"><a href="/">Home</a></li>
-        <li><a href="Register.aspx">Register</a></li>        
-        <li><a href="Howitworks.aspx">How it works ? </a></li>
-         <li ><a href="About.aspx">About us</a></li>
-          <li><a href="Login.aspx">Login</a></li>
+        <li><a href="/Register.aspx">Register</a></li>        
+        <li><a href="/Howitworks.aspx">How it works ? </a></li>
+         <li ><a href="/About.aspx">About us</a></li>
+          <li><a href="/Login.aspx">Login</a></li>
       </ul>
     </div>
      

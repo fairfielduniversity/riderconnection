@@ -28,10 +28,55 @@
         }, callback);
     }
     function _submitRequest(distanceResponse, status) {
-        console.log("from: " + start_obj.formatted_address);
-        console.log("to: " + end_obj.formatted_address);
-        console.log("distance: ");
-        console.log(distanceResponse.rows[0].elements[0]);
+        console.log("from: " + start_obj.formatted_address + " long " + start_obj.geometry.location.A + " lat "+ start_obj.geometry.location.k);
+        //longitude
+        console.log("to: " + end_obj.formatted_address + " long " + end_obj.geometry.location.A + " lat " + end_obj.geometry.location.k);
+        console.log("distance in KM: ");
+        console.log(distanceResponse.rows[0].elements[0].distance.value);
+        console.log("distance in miles: " + distanceResponse.rows[0].elements[0].distance.value / 1609.34);
+        $.ajax({
+            url: '/Api/rides.aspx?get=locations&start_location=-41.3712283,73.41396209999999&radius=10',
+            success: function (response) {
+                var obj =response;
+                var items = obj.Items;
+                var html = "<table class='table'><thead><tr>" +
+                    "<th>#</th>" +
+                    "<th>User</th>" +
+                    "<th>Max</th>" +
+                    "<th>Rate</th>" +
+                    "<th>Distance</th>" +
+                    "<th>Action</th>" +
+                    "</tr></thead><tbody>";
+                for (var k = 0; k < items.length; k++) {
+                    html += "<tr>" +
+                         "<td class='request-id'>"+items[k].id+"</td>" +
+                         "<td>" + items[k].user + "</td>" +
+                         "<td>" + items[k].max + "</td>" +
+                         "<td>" + items[k].rate + "</td>" +
+                         "<td>" + items[k].distance + "</td>" +
+                         "<td><button type='button' class='btn btn-mini btn-success request'>Request</button></td>" +
+                        "</tr>";
+                }
+                html += "</tbody></table>";
+                $('#search-results').html(html);
+            },
+            error: function (err) {
+                alert('oops we have an error.');
+                console.log(err);
+            }
+        })
+    }
+    function requestRideOffer(parentEle, offerId) {
+        $.ajax({
+            url: '/Api/rides.aspx?request=' + offerId,
+            success: function (response) {
+                alert("Offer was requested.");
+                $(parentEle).remove();
+            },
+            error: function (err) {
+                alert("Could not request offer.");
+            }
+        });
     }
     //dom starts
     $(function () {
@@ -40,5 +85,10 @@
             findRidesNearBy(start_obj.formatted_address, end_obj.formatted_address, _submitRequest);
 
         });
+        $('#search-results').on('click','.request', function () {
+            var parent = $(this).closest('tr');
+            var id = $(parent).find('.request-id').text();
+            requestRideOffer(parent, id);
+        })
     });
 }(jQuery));

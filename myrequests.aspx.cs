@@ -29,7 +29,12 @@ public partial class MyRequests : System.Web.UI.Page
         {
             string id = e.CommandArgument.ToString();
             Response.Redirect("~/TransactionForm.aspx?id=" + id);
-        }       
+        }
+        else if (commandName == "Close")
+        {
+            string id = e.CommandArgument.ToString();
+            Response.Redirect("~/review.aspx?id=" + id);
+        }    
         DataList1.DataBind();
     }
 }

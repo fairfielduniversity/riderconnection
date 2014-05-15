@@ -80,6 +80,7 @@
                         <td class="width100 col-center"><asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>' /></td>                        
                         <td class="width100 col-center">
                             <asp:Button ID="Pay" runat="server" CommandName="Pay" Text="Confirm" CommandArgument='<%# Eval("Offer_Lock_ID") %>' Visible='<%# (Eval("Status").ToString() == "1") %>' />
+                            <asp:Button ID="Close" runat="server" CommandName="Close" Text="Review" CommandArgument='<%# Eval("Offer_Lock_ID") %>' Visible='<%# (Eval("Status").ToString() == "3") %>' />
                         </td>                        
                     </tr>
                 </table>               

@@ -12,7 +12,7 @@
   <div id="header">
     <div id="logo">
    <img src="images/demo/mainlogo.jpg" alt="" />
-      <h1><a href="Index.aspx">Riders Connection</a></h1>
+      <h1><a href="/">Riders Connection</a></h1>
       <p><strong>Your ultimate ride finder !</strong></p>
     </div>
 
@@ -21,7 +21,7 @@
      
     
       
-          <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label> !</p> <img src="images/demo/profilepic.png" />  <p >&nbsp&nbsp<a href="Index.aspx"><strong>LOG OUT</strong></a></p>
+          <p>Welcome <asp:Label id="lblLoggedInUser" runat="server" Text="Label"></asp:Label> !</p> <img src="images/demo/profilepic.png" />  <p >&nbsp&nbsp<a href="/"><strong>LOG OUT</strong></a></p>
               &nbsp;</p>
      
        <p ></p>

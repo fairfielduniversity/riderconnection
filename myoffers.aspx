@@ -72,7 +72,7 @@
                 <table style="width: 100%; margin: 0 auto;">
                 <tr>
                     <td class="width50">
-                        <asp:Label ID="OfferLock_IDLabel" runat="server" Text='<%# Eval("OfferLock_ID") %>' />
+                        <asp:Label ID="OfferLock_IDLabel" runat="server" Text='<%# Eval("Offer_Lock_ID") %>' />
                     </td>
                     <td class="width100">
                         <asp:Label ID="Offer_IDLabel" runat="server" Text='<%# Eval("Offer_ID") %>' />
@@ -95,21 +95,14 @@
     </asp:DataList>
         </div>
     <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>"
-        SelectCommand="SELECT [OfferLock_ID], [Offer_ID], [Status], 
-        (SELECT max(status) maxstatus
-            FROM 
-	     [Offer_Lock], 
-	     [User_Information] 
-        WHERE 
-	        [User_Information].User_ID = [OFFER_LOCK].UserID 
-AND ([OFFER_ID] =@OfferId)) maxstatus, [UserID], [FIRSTNAME], [LASTNAME] FROM [Offer_Lock], [User_Information] WHERE [User_Information].User_ID = [OFFER_LOCK].UserID AND ([OFFER_ID] = @OfferId)">
+    <asp:SqlDataSource ID="offersStatusDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>"
+        SelectCommand="SELECT Offer_Lock.Id Offer_Lock_ID, Offer_Lock.Status offer_lock_status, Offer_Lock.User_Id offer_lock_user_id FROM Offer_Lock INNER JOIN User_Information ON Offer_Lock.User_Id = User_Information.User_ID WHERE (Offer_Lock.Offer_Id = @Offers_Id)">
         <SelectParameters>
-            <asp:ControlParameter ControlID="ddlOfferId" Name="OfferId"
-                PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="ddlOfferID" Name="Offers_Id"
+                PropertyName="SelectedValue" DefaultValue="-1" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT [Offer_ID], [OfferInformation] FROM [Offer_Information] WHERE ([UserID] = @UserID)">
+    <asp:SqlDataSource ID="offersDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT Id, Address FROM Offers WHERE (User_ID = @UserID)">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="-1" Name="UserID" SessionField="Userid" Type="Int32" />
         </SelectParameters>

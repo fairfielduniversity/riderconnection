@@ -17,6 +17,7 @@
 
         .width100 {
             width: 100px;
+            background-color: #FF9900;
         }
 
         .width200 {
@@ -40,57 +41,38 @@
         .newStyle2 {
             width: 100px;
         }
+        .auto-style1 {
+            background-color: #FF9900;
+        }
+        .auto-style2 {
+            font-weight: bold;
+            text-align: center;
+            background-color: #FF9900;
+        }
+        .auto-style3 {
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
     <div style="min-height:300px">
-        <asp:DataList ID="DataList1" runat="server" CssClass="table-center" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" OnItemCommand="DataList1_ItemCommand">
+        <asp:DataList ID="DataList1" runat="server" CssClass="table-center" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" OnItemCommand="DataList1_ItemCommand" >
             <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderTemplate>
                 <table class="auto-style1">
                     <tr>
-                        <td class="col-center width100">OFFER ID</td>
-                        <td class="col-center width100">STATUS</td>
-                        <td class="col-center width200">&nbsp;</td>
-
-
-                         <br />
-                <br />
-                <br />
-                <br />
-                Id:
-                
-                <br />
-                Offer_Id:
-                
-                <br />
-                Status:
-                
-                <br />
-                User_Id:
-                
-                <br />
-                Rate:
-                
-                <br />
-                Capacity:
-                
-                <br />
-                MaxDistance:
-                
-                <br />
-                FirstName:
-                
-                <br />
-                LastName:
-                
-                <br />
-                <br />
-
-
+                        <td class="auto-style3">ID</td>
+                        <td class="auto-style3">OFFER ID</td>
+                        <td class="auto-style2">Status</td>
+                        <td class="auto-style3">User_Id</td>
+                        <td class="auto-style3">Rate</td>
+                        <td class="auto-style2">Capacity</td>
+                        <td class="auto-style3">MaxDistance</td>
+                        <td class="auto-style3">NAME</td>
+                        <td class="auto-style2">&nbsp;</td>
                     </tr>
                 </table>
             </HeaderTemplate>

@@ -33,13 +33,13 @@ public partial class _Default : System.Web.UI.Page
             string offerlockId = txtOfferLockId.Value;
 
             con.Open();
-            string accept = "update dbo.Offer_Lock set status = 3  where offerlock_id = " + offerlockId;
+            string accept = "update dbo.Offer_Lock set status = 3  where id = " + offerlockId;
             SqlCommand cmd = new SqlCommand(accept, con);
             cmd.ExecuteNonQuery();
 
             string reject = " update dbo.Offer_Lock set status = 2 " + 
-                            " where offer_id in (select offer_id from dbo.Offer_Lock where offerlock_id = " + offerlockId  + " ) "
-                            + "and offerlock_id <> " + offerlockId;
+                            " where offer_id in (select offer_id from dbo.Offer_Lock where id = " + offerlockId  + " ) "
+                            + "and id <> " + offerlockId;
             cmd = new SqlCommand(reject, con);
             cmd.ExecuteNonQuery();
             Response.Redirect("~/myrequests.aspx");

@@ -120,9 +120,8 @@
                                  <td class="width50">
                                     <asp:Label ID="TripDistanceLabel" runat="server" Text='<%# Eval("Trip_distance").ToString()  + " mi." %>'/> 
                                  </td>
-
                                 <td class="width100">
-                                    <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>' style="text-align: center" />
+                                    <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>'/>
                                 </td>
 
                                 <td class="auto-style1">

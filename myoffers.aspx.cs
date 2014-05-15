@@ -42,7 +42,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             con.Open();
             string id = e.CommandArgument.ToString();
-            string reject = "update dbo.Offer_Lock set status = 2  where offerlock_id = " + id;
+            string reject = "update dbo.Offer_Lock set status = 2  where id = " + id;
             SqlCommand cmd = new SqlCommand(reject, con);
             cmd.ExecuteNonQuery();
         }
@@ -50,13 +50,13 @@ public partial class Default2 : System.Web.UI.Page
         {
             con.Open();
             string id = e.CommandArgument.ToString();
-            string accept = "update dbo.Offer_Lock set status = 1  where offerlock_id = " + id;
+            string accept = "update dbo.Offer_Lock set status = 1  where id = " + id;
             SqlCommand cmd = new SqlCommand(accept, con);
             cmd.ExecuteNonQuery();
 
             string reject = "update dbo.Offer_Lock set status = 2  where offer_id = " 
                             + ddlOfferID.SelectedValue
-                            + "and offerlock_id <> " + id;
+                            + "and id <> " + id;
             cmd = new SqlCommand(reject, con);
             cmd.ExecuteNonQuery();
         }

@@ -32,7 +32,7 @@
         }
 
         .table-center {
-            margin: 0 auto;
+            margin: 0 auto 0 0px;
         }
         .newStyle1 {
             text-align: center;
@@ -55,30 +55,66 @@
                         <td class="col-center width100">OFFER ID</td>
                         <td class="col-center width100">STATUS</td>
                         <td class="col-center width200">&nbsp;</td>
+
+
+                         <br />
+                <br />
+                <br />
+                <br />
+                Id:
+                
+                <br />
+                Offer_Id:
+                
+                <br />
+                Status:
+                
+                <br />
+                User_Id:
+                
+                <br />
+                Rate:
+                
+                <br />
+                Capacity:
+                
+                <br />
+                MaxDistance:
+                
+                <br />
+                FirstName:
+                
+                <br />
+                LastName:
+                
+                <br />
+                <br />
+
+
                     </tr>
                 </table>
             </HeaderTemplate>
             <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
             <ItemTemplate>
-                <table style="width: 100%; margin: 0 auto;">
+                <table class="nav-justified">
                     <tr>
-                        <td class="col-center width100">
-                            <asp:Label ID="Offer_IDLabel" runat="server" Text='<%# Eval("Offer_ID") %>' />
-                        </td>
-                        <td class="col-center width100">
-                            <asp:Label ID="StatusLabel" runat="server" Text='<%# (Eval("Status").ToString() == "0") ? "New" : ((Eval("Status").ToString() == "1") ? "Accepted" : ((Eval("Status").ToString() == "2") ? "Rejected" : "Locked"))  %>' />
-                        </td>
-                        <td class="col-center width200">
-                            <asp:Button ID="Pay" runat="server" CommandName="Pay" Text="Pay" CommandArgument='<%# Eval("OfferLock_ID") %>' Enabled='<%# (Eval("Status").ToString() == "1") %>' />
-                        </td>
+                        <td><asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' /></td>
+                        <td><asp:Label ID="Offer_IdLabel" runat="server" Text='<%# Eval("Offer_Id") %>' /></td>
+                        <td><asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' /></td>
+                        <td><asp:Label ID="User_IdLabel" runat="server" Text='<%# Eval("User_Id") %>' /></td>
+                        <td><asp:Label ID="RateLabel" runat="server" Text='<%# Eval("Rate") %>' /></td>
+                        <td><asp:Label ID="CapacityLabel" runat="server" Text='<%# Eval("Capacity") %>' /></td>
+                        <td><asp:Label ID="MaxDistanceLabel" runat="server" Text='<%# Eval("MaxDistance") %>' /></td>
+                        <td><asp:Label ID="FirstNameLabel" runat="server" Text='<%# Eval("FirstName") %>' /></td>
+                        <td><asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' /></td>
                     </tr>
-                </table>
+                </table>               
             </ItemTemplate>
             <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT [OfferLOCK_ID], [Offer_ID], [UserID], [Status] FROM [Offer_Lock] WHERE ([UserID] = @UserID)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RidersConnectionConnectionString %>" SelectCommand="SELECT Offer_Lock.Id, Offer_Lock.Offer_Id, Offer_Lock.Status, Offer_Lock.User_Id, Offers.Rate, Offers.Capacity, Offers.MaxDistance, User_Information.FirstName, User_Information.LastName FROM Offer_Lock INNER JOIN Offers ON Offer_Lock.Offer_Id = Offers.Id INNER JOIN User_Information ON Offer_Lock.User_Id = User_Information.User_ID WHERE (Offer_Lock.User_Id = @UserID)">
             <SelectParameters>
-                <asp:SessionParameter Name="UserID" SessionField="Userid" Type="Int32" />
+                <asp:SessionParameter Name="UserID" SessionField="Userid" Type="Int32" DefaultValue="-1" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
